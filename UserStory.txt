@@ -1,0 +1,24 @@
+# Project 01
+
+*Description*
+
+## User Story
+
+```
+AS A music fan/concert goer/ foodie
+I WANT to know the location and weather for my favorite bands/fests/concerts plus food options in the area 
+SO THAT I can have the best musical experience EVER
+```
+
+## Acceptance Criteria
+
+```
+GIVEN an event dashboard with form inputs
+WHEN I search for an artist
+THEN I receive a list of concert locations
+WHEN I click on a concert venue
+THEN I am presented with the weather and food options in the venue's surrounding area
+WHEN 
+THEN 
+WHEN 
+THEN 
