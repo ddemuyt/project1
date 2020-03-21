@@ -6,7 +6,7 @@ var rapKey = "KnvZfZ7vAv1";
 var popKey = "KnvZfZ7vAev";
 var rnbKeyy = "KnvZfZ7vAee";
 
-var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=2AFGOLxDadbErVsemSWtnWf3BL6ENzT1&marketId=47&classificationName=music&genreId="
+var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=2AFGOLxDadbErVsemSWtnWf3BL6ENzT1&marketId=47&size=5&classificationName=music&genreId="
 var fullQueryURL = ""
 
 $("#submit").on("click", function(){
@@ -55,7 +55,7 @@ $.ajax({
 
             for (var i = 0; i < json._embedded.events.length; i++){
                var eventsloop = json._embedded.events[i];
-               var events = $('<h2>').text(eventsloop.name);
+               var events = $('<div class="is-size-4 has-text-primary">').text(eventsloop.name);
                var venue = $("<h3>").text(eventsloop._embedded.venues[0].name);
                var address = $("<h4>").html(eventsloop._embedded.venues[0].address.line1 + "<br>" + eventsloop._embedded.venues[0].city.name + ", " + eventsloop._embedded.venues[0].state.name);
                // var tickets = $("<a>").attr("href", eventsloop.url);
@@ -63,6 +63,7 @@ $.ajax({
                d.append(events);
                d.append(venue);
                d.append(address);
+               d.append('<br>');
                // d.append(tickets);
                var a = $(".concert-options")
                $("#rockDiv").append(d);
@@ -73,7 +74,6 @@ $.ajax({
    //          }
 );  
  
- console.log(a)
  console.log($("#select").attr("id"));
 });
 

@@ -37,12 +37,7 @@
 <!-- User input form within 'box'-->
         <div class="box">
             <article class="media">
-
-              
-
-
               <div class="media-left">
-                
               </div>
               <div class="media-content">
                 <div class="content">
@@ -67,23 +62,23 @@
                       <div class="field has-addons">
                         <div class="control is-expanded">
                           <div class="select is-fullwidth">
-                            <select name="country">
-                              <option value="Argentina">Select a Genre</option>
-                              <option value="Rock">Rock</option>
-                              <option value="Country">Country</option>
-                              <option value="Pop">Pop</option>
-                              <option value="Rap">Rap</option>
-                              <option value="hiphop">Hip-hop/R&B</option>
+                            <select id="select">
+                              <option>Select dropdown</option>
+                              <option id="rock">Rock</option>
+                              <option id="edm">EDM</option>
+                              <option id="country">Country</option>
+                              <option id="folk">Folk</option>
+                              <option id="rap">Hip-Hop / Rap</option>
+                              <option id="pop">Pop</option>
+                              <option id="rnb">R&B</option>
                             </select>
                           </div>
                         </div>
                         <div class="control">
-                          <button type="submit" class="button is-primary">Choose</button>
+                          <button type="submit" id="submit" class="button is-primary">Choose</button>
                         </div>
                       </div>
-                      
-                      <Br>
-                
+                      <br>
                       <!-- <div class="field is-grouped">
                         <div class="control">
                           <button class="button is-link">Submit</button>
@@ -93,15 +88,44 @@
                         </div>
                       </div> -->
                 </div>
-                
               </div>
             </article>
           </div>
+
+         <!-- Results section display here -->
+
+         <div class="box">
+          <article class="media">
+            
+            <div class="media-content">
+              <div class="results">
+                <p>
+                  <strong>Results</strong>
+                  <div id = "rockDiv"></div>
+                  <br>
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                 
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+
+            
+          </div>
+
     </div>
       </div>
     </div>
   
     <!-- INSERT FOOTER HERE -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="script.js"></script>
     
     </div>
   </section>
