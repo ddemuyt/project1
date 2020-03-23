@@ -1,3 +1,4 @@
+
 var rockKey = "KnvZfZ7vAeA";
 var EDMkey = "KnvZfZ7vAvF";
 var countryKey = "KnvZfZ7vAv6";
@@ -12,8 +13,13 @@ var fullQueryURL = ""
 getWeather();
 
 $("#submit").on("click", function(){
+
+
    $("#rockDiv").empty();
    console.log($("#select").attr("id"));
+
+   $('#results').addClass('show');
+
 
 switch ($("#select").val()){
    case "Rock":
@@ -188,4 +194,3 @@ function initAutocomplete() {
      map.fitBounds(bounds);
    });
  }
-

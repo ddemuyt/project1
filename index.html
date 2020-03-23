@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Carter+One|Days+One|Righteous|Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Days+One|Abel|Montserrat|Raleway&display=swap" rel="stylesheet">
 
 
   </head>
@@ -33,35 +33,23 @@
 
     <label class="homepage-header">fatbeats</label><br>
 
+
+   
+
+
 <!-- User input form within 'box'-->
         <div class="box">
             <article class="media">
-              <div class="media-left">
-              </div>
+         
               <div class="media-content">
-                <div class="content">
-
-                  <!-- REMOVING OPEN FIELDS AND FOOD OPTION -->
-                    <!-- <div class="genre-input">
-                        <label class="label">Genre of Music</label>
-                        <div class="control">
-                          <input class="input" type="text" placeholder="Search a musical genre">
-                        </div>
-                      </div>
-                      
-                      <div class="food-input">
-                        <label class="label">Type of Food</label>
-                        <div class="control">
-                          <input class="input" type="text" placeholder="Enter in a Cuisine">
-                        </div>
-                      </div> -->
+                <div class="content has-text-centered">
                       
                      <label class="homepage-description">Make your next musical experience worry-free with planning before the show even starts.<br><br></label>
                       <div class="field has-addons">
                         <div class="control is-expanded">
                           <div class="select is-fullwidth">
                             <select id="select">
-                              <option>Select dropdown</option>
+                              <option>Select a musical genre to discover events in Washington, DC</option>
                               <option id="rock">Rock</option>
                               <option id="edm">EDM</option>
                               <option id="country">Country</option>
@@ -77,57 +65,52 @@
                         </div>
                       </div>
                       <br>
-                      <!-- <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-link">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button is-link is-light">Cancel</button>
-                        </div>
-                      </div> -->
+
                 </div>
               </div>
             </article>
           </div>
 
-         <!-- Results section display here -->
-
+<!-- All following items hidden until choose button is selected -->
+     <div id="results" class="hide">
+         <!-- Concert display here -->
+   
          <div class="box">
           <article class="media">
             
-            <div class="media-content">
-              <div class="results">
-                <p>
-                  <strong>Results</strong>
-                  <div id = "rockDiv"></div>
-                  <br>
-                </p>
-              </div>
-              <nav class="level is-mobile">
-                <div class="level-left">
-                  <h2>Current Weather in Washington, DC</h2>
-                  <br>
-                  <img id="currentimg">
-                  <br>
-                  <p id="temp"></p>
-                  <br>
-                  <p id="feelsliketemp"></p>
-                  <br>
-                  <p id="humidity"></p>
-                  <br>
-                  <p id="wind"></p>
+            <div class="tile is-ancestor">
+                <div class="tile">
+                    <div class="media-content">
+                            <p class="concerts">
+                            <strong>Upcoming Concert Events in Washington, DC</strong>
+                            <br>
+                            <div id = "rockDiv"></div>
+                            <br>
+                            </p>
+                    </div>
                 </div>
-              </nav>
             </div>
-          </article>
-        </div>
 
-          <!-- google api -->
+        <!-- Right column displaying weather info -->
+
+                <div class="tile">
+                        <div class="card-content">
+                        <div class="is-size-4 has-text-success">Current Weather in Washington, DC</div>
+                        <p class="weather-img"><img id="currentimg"></p>
+                        <p id="temp"></p>
+                        <p id="feelsliketemp"></p>
+                        <p id="humidity"></p>
+                        <p id="wind"></p>
+                        </div>
+                </div>
+          </article>
+        </div> 
+    
+
+          <!-- Google API -->
 
           <div class="box">
-            <article class="media">
-              <div class="media-left">
-              </div>
+            <article class="media is-centered">
               <div class="media-content">
                   <div id="map-div">
                     <input id="searchbar-input" class="controls" type="text" placeholder="Search Food!"></input>
@@ -136,23 +119,22 @@
               </div>
             </article>
           </div>
-          
       </div>
     </div>
+    </div>
+</div>
+    </div>
+    </div>
+</section>
 
-    </div>
-    </div>
-  
-    <!-- INSERT FOOTER HERE -->
+    <!-- Source Codes -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="script.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMxUTr1gnR5CBBaNhSZabIhovtVkL4xAI&libraries=places&callback=initAutocomplete"
   async defer></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMxUTr1gnR5CBBaNhSZabIhovtVkL4xAI&libraries=places"></script>
   </div>
-  </section>
+ 
 
 </body>
 </html>
