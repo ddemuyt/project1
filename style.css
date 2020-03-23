@@ -6,11 +6,31 @@
     background-size:  cover;
     background-color: #999;}
 
-.homepage-header{
+.homepage-header {
     font-size: 60pt;
     font-family: 'Carter One', cursive;
     font-weight: 900;
     color: black;
+}
+
+.concerts {
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+}
+
+#rockDiv {
+  padding-left: 60px;
+
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 .logo {
@@ -21,13 +41,19 @@
 
 }
 
+.weather-nav {
+  font-size: x-large;
+  font-weight: bolder;
+  color: white;
+  font-family: 'Abel', cursive;
+
+}
+
 .homepage-description{
     font-size: 15pt;
     font-weight: 900;
     color: gray;
-    font-family: 'Raleway', sans-serif;
-    background-position: center;
-   
+    font-family: 'Montserrat', sans-serif;
 }
 
 #map {
