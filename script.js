@@ -107,53 +107,81 @@ $.ajax({
        $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
        $("#humidity").text("Humidity: " + response.main.humidity + "%");
 
+function getWeather() {
+  $.ajax({
+     url: apiCall,
+     method: "GET",
+  })
+  
+     .then(function (response) {
+         
+         //Log response object
+         console.log(response);
+  
+         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+         var feelsliketempF = (response.main.feels_like - 273.15) * 1.80 + 32;
+  
+         // add temp content to html
+         $("#temp").text("Temperature: " + tempF.toFixed(2) + " F");
+         $("#feelsliketemp").text("Feels Like: " + feelsliketempF.toFixed(2) + " F");
+         $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
+         $("#humidity").text("Humidity: " + response.main.humidity + "%");
+  
+  
+  var iconURL = "http://openweathermap.org/img/wn/";
+  
+  
+  var currentWC = response.weather[0].main;
+  if (currentWC == "Clear"){
+   $("#currentimg").attr("src", iconURL + "01d@2x.png");
+  }
+  else if (currentWC == "Clouds"){
+   $("#currentimg").attr("src", iconURL + "03d@2x.png");
+  }
+  else if (currentWC == "Thunderstorm"){
+   $("#currentimg").attr("src", iconURL + "11d@2x.png");
+  }
+  else if (currentWC == "Drizzle"){
+   $("#currentimg").attr("src", iconURL + "09d@2x.png");
+  }
+  else if (currentWC == "Rain"){
+   $("#currentimg").attr("src", iconURL + "10d@2x.png");
+  }
+  else if (currentWC == "Snow"){
+   $("#currentimg").attr("src", iconURL + "13d@2x.png");
+  }
+  else {
+   $("#currentimg").attr("src", iconURL + "50d@2x.png");
+  }
+     });
+  };
 
-var iconURL = "http://openweathermap.org/img/wn/";
+var ltln = {lat: 38.9072, lng: -77.0369};
+var zm = 13;
 
-
-var currentWC = response.weather[0].main;
-if (currentWC == "Clear"){
- $("#currentimg").attr("src", iconURL + "01d@2x.png");
-}
-else if (currentWC == "Clouds"){
- $("#currentimg").attr("src", iconURL + "03d@2x.png");
-}
-else if (currentWC == "Thunderstorm"){
- $("#currentimg").attr("src", iconURL + "11d@2x.png");
-}
-else if (currentWC == "Drizzle"){
- $("#currentimg").attr("src", iconURL + "09d@2x.png");
-}
-else if (currentWC == "Rain"){
- $("#currentimg").attr("src", iconURL + "10d@2x.png");
-}
-else if (currentWC == "Snow"){
- $("#currentimg").attr("src", iconURL + "13d@2x.png");
-}
-else {
- $("#currentimg").attr("src", iconURL + "50d@2x.png");
-}
-   });
-};
+// Functon to create new google map 
 function initAutocomplete() {
    var map = new google.maps.Map(document.getElementById('map'), {
-     center: {lat: 38.9072, lng: -77.0369},
-     zoom: 13,
+     center: ltln,
+     zoom: zm,
      mapTypeId: 'roadmap'
    });
 
+   // Creates a searchbar 
    var input = document.getElementById('searchbar-input');
    var searchBox = new google.maps.places.SearchBox(input);
    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
+   // Focus the maps search results to match the specified area
    map.addListener('bounds_changed', function() {
      searchBox.setBounds(map.getBounds());
    });
 
    var markers = [];
+
+   //Adds autocomplete to the searchbox based on google results
    searchBox.addListener('places_changed', function() {
      var places = searchBox.getPlaces();
-
      if (places.length == 0) {
        return;
      }
@@ -193,4 +221,49 @@ function initAutocomplete() {
      });
      map.fitBounds(bounds);
    });
- }
+
+ var jll = document.querySelector("#jiff");
+ var mpp = document.querySelector("#merriweather");
+ var anth = document.querySelector("#anthem");
+ var coo = document.querySelector("#capitalone");
+ var birch = document.querySelector("#birchmere");
+ var fil = document.querySelector("#filmore");
+
+ 
+ jll.addEventListener("click", function() {
+   ltln = {lat: 38.7854, lng: -77.5902};
+   zm = 17;
+   initAutocomplete();
+ });
+
+ mpp.addEventListener("click", function() {
+   ltln = {lat: 39.2094, lng: -76.8618};
+   zm = 17;
+   initAutocomplete();
+ });
+
+ anth.addEventListener("click", function() {
+   ltln = {lat: 38.8801, lng: -77.0261};
+   zm = 17;
+   initAutocomplete();
+ });
+
+ coo.addEventListener("click", function() {
+   ltln = {lat: 38.8981, lng: -77.0208};
+   zm = 17;
+   initAutocomplete();
+ });
+
+ birch.addEventListener("click", function() {
+   ltln = {lat: 38.8399, lng: -77.0613};
+   zm = 17;
+   initAutocomplete();
+ });
+
+ fil.addEventListener("click", function() {
+   ltln = {lat: 38.9974, lng: -77.0276};
+   zm = 17;
+   initAutocomplete();
+ });
+}
+});
