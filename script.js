@@ -86,28 +86,6 @@ $.ajax({
  
  console.log($("#select").attr("id"));
 });
-
-function getWeather() {
-$.ajax({
-   url: apiCall,
-   method: "GET",
-})
-
-   .then(function (response) {
-       
-       //Log response object
-       console.log(response);
-
-       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-       var feelsliketempF = (response.main.feels_like - 273.15) * 1.80 + 32;
-
-       // add temp content to html
-       $("#temp").text("Temperature: " + tempF.toFixed(2) + " F");
-       $("#feelsliketemp").text("Feels Like: " + feelsliketempF.toFixed(2) + " F");
-       $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
-       $("#humidity").text("Humidity: " + response.main.humidity + "%");
-   })
-
    
 function getWeather() {
   $.ajax({
