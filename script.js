@@ -157,7 +157,7 @@ function getWeather() {
   }
      });
   };
-
+}
 var ltln = {lat: 38.9072, lng: -77.0369};
 var zm = 13;
 
