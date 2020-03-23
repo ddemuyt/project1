@@ -106,7 +106,9 @@ $.ajax({
        $("#feelsliketemp").text("Feels Like: " + feelsliketempF.toFixed(2) + " F");
        $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
        $("#humidity").text("Humidity: " + response.main.humidity + "%");
+   })
 
+   
 function getWeather() {
   $.ajax({
      url: apiCall,
@@ -266,4 +268,3 @@ function initAutocomplete() {
    initAutocomplete();
  });
 }
-});
